@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <!-- Bootstrap Styles-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="resources/styles/bootstrap.min.css">
     <link rel="stylesheet" href="resources/styles/styles.css" />
 </head>
@@ -16,11 +16,11 @@
         <h1>Rock Paper Scissors</h1>
         <div id="welcome-screen">
             <form id="name-form">
-                <div>
+                <div class="form-group">
                     <label for="username">Your Name</label>
-                    <input id="username" placeholder="Enter Name Here..." name="username">
+                    <input id="username" placeholder="Enter Name Here..." name="username" class="form-control">
                 </div>
-                <button id="start-game-button">
+                <button id="start-game-button" type="button" class="btn btn-primary">
                     Start Game!
                 </button>
             </form>
@@ -30,15 +30,15 @@
                 <p id="score">User: 0 v CPU: 0</p>
             </div>
             <form id="game-form">
-                <div>
+                <div class="form-group">
                     <label for="user-selection">Select your choice</label>
-                    <select id="user-selection" name="user-selection">
-                        <option>Rock</option>
-                        <option>Paper</option>
-                        <option>Scissor</option>
+                    <select id="user-selection" name="user-selection" class="custom-select">
+                        <option value="1">Rock</option>
+                        <option value="2">Paper</option>
+                        <option value="3">Scissor</option>
                     </select>
                 </div>
-                <button id="go-button">
+                <button id="go-button" type="button" class="btn btn-success">
                     Go!
                 </button>
             </form>
