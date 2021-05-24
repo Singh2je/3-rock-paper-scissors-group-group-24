@@ -1,6 +1,6 @@
 Rock Paper Scissors - Group Assignment
 ===================================
-[![Assignment Checks](https://s///github.com/IT3049C/3.Rock-paper-scissors/actions/workflows/classroom.yml/badge.svg)](https://s///github.com/IT3049C/3.Rock-paper-scissors/actions/workflows/classroom.yml)
+[![Assignment Checks](https://s///github.com/IT3049C-Students/3-rock-paper-scissors-group-group-24/actions/workflows/classroom.yml/badge.svg)](https://s///github.com/IT3049C-Students/3-rock-paper-scissors-group-group-24/actions/workflows/classroom.yml)
 
 Instructions to this assignment can be found [here](https://it3049c.github.io/Material/Assignments/3.Rock_Paper_Scissors/).
 
