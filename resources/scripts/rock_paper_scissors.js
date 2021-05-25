@@ -51,9 +51,10 @@ class RockPaperScissors {
     {
       return 'win';
     }
-   
+    else
+    {
       return 'lose';
-    
+    }
 
   }
 
@@ -67,12 +68,18 @@ class RockPaperScissors {
     if(userVictory == 'win')
     {
       this.score.user ++;
-      this.gameHistoryLog.push(`${this.username} selected ${userSelection}, cpu selected ${cpuSelection}: ${this.username} wins`);
+      this.gameHistoryLog = [];
+      this.gameHistoryLog.push(`${this.username.value} selected ${userSelection}, cpu selected ${cpuSelection}: ${this.username.value} wins`);
     }
     else if(userVictory == 'lose')
     {
       this.score.cpu ++;
-      this.gameHistoryLog.push(`${this.username} selected ${userSelection}, cpu selected ${cpuSelection}: cpu wins`);
+      this.gameHistoryLog = [];
+      this.gameHistoryLog.push(`${this.username.value} selected ${userSelection}, cpu selected ${cpuSelection}: cpu wins`);
+    }
+    else {
+      this.gameHistoryLog = [];
+      this.gameHistoryLog.push(`${this.username.value} selected ${userSelection}, cpu selected ${cpuSelection}: it's a tie!`);
     }
 
 
