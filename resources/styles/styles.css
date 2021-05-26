@@ -1,7 +1,22 @@
 #welcome-screen {
-  border: 1px solid black;
+  border: 3px solid black;
+  border-radius: 5px;
 }
 
 #game-screen {
-  border: 1px solid red;
+ border: 3px solid teal;
+ border-radius: 5px; 
 }
+
+h1{
+  letter-spacing: 3px;
+  color: maroon;
+  text-align: center;
+  padding: 1%;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  background-color: peachpuff;
+  border-radius: 13px;
+  letter-spacing: 15px;
+}
+
