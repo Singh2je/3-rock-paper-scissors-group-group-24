@@ -3,20 +3,23 @@ const welcomeScreen = document.getElementById(`welcome-screen`);
 const gameScreen = document.getElementById(`game-screen`);
 const startGameButton = document.getElementById(`start-game-button`);
 const userName = document.getElementById(`username`);
-// const userSelection = document.getElementById(`user-selection`);
+const user_selection = document.getElementById(`user-selection`);
 const goButton = document.getElementById(`go-button`);
 const scoreParagraph = document.getElementById(`score`);
 const gameHistoryParagraph = document.getElementById(`game-history`);
 const rockButton = document.getElementById(`rock-button`);
 const paperButton = document.getElementById(`paper-button`);
 const scissorsButton = document.getElementById(`scissors-button`);
+const emptySelectionWarning = document.getElementById(`emptySelectionWarning`);
 
 // instantiate the game object from the `RockPaperScissors` class.
 let game = new RockPaperScissors(userName);
-let userSelection = `rock`;
+let userSelection;
 
 // hide game screen
 gameScreen.classList.add(`d-none`);
+emptySelectionWarning.classList.add(`d-none`);
+user_selection.classList.add(`d-none`);
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
@@ -24,8 +27,8 @@ function updateScoreTallyUI(){
 }
 
 // updateGameHistoryUI
-  function updateGameHistoryUI(){
-    gameHistoryParagraph.innerHTML = game.gameHistoryLog;
+function updateGameHistoryUI(){
+  gameHistoryParagraph.innerHTML = game.gameHistoryLog;
 }
 
 // start-game-button EventListener
@@ -37,9 +40,14 @@ startGameButton.addEventListener(`click`, function () {
 
 // go-button EventListener
 goButton.addEventListener(`click`, function () {
-  game.play(userSelection);
-  updateScoreTallyUI();
-  updateGameHistoryUI();
+  if(userSelection){
+    emptySelectionWarning.classList.add(`d-none`);
+    game.play(userSelection);
+    updateScoreTallyUI();
+    updateGameHistoryUI();
+  } else {
+    emptySelectionWarning.classList.remove(`d-none`);
+  }
 });
 
 rockButton.addEventListener(`click`, function () {
