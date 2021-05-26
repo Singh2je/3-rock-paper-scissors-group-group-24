@@ -11,6 +11,7 @@ const rockButton = document.getElementById(`rock-button`);
 const paperButton = document.getElementById(`paper-button`);
 const scissorsButton = document.getElementById(`scissors-button`);
 const emptySelectionWarning = document.getElementById(`emptySelectionWarning`);
+const resetButton = document.getElementById(`reset-button`);
 
 // instantiate the game object from the `RockPaperScissors` class.
 let game = new RockPaperScissors(userName);
@@ -35,6 +36,8 @@ function updateGameHistoryUI(){
 startGameButton.addEventListener(`click`, function () {
   welcomeScreen.classList.add(`d-none`);
   gameScreen.classList.remove(`d-none`); 
+  game.username.value = userName.value;
+  updateScoreTallyUI();
   // Complete
 });
 
@@ -72,6 +75,17 @@ scissorsButton.addEventListener(`click`, function () {
 });
 
 // If you're doing the extra-credit, uncomment the below: reset-game-button
-// resetGameButton.addEventListener(`click`, function(e) { 
-  
-// });
+resetButton.addEventListener(`click`, function(e) { 
+  gameScreen.classList.add(`d-none`);
+  welcomeScreen.classList.remove(`d-none`);
+  game.username.value = ``;
+  game.gameHistoryLog = [];
+  game.score.cpu = 0;
+  game.score.user = 0;
+  userSelection = ``;
+  rockButton.style.background='#707070'
+  paperButton.style.background='#707070'
+  scissorsButton.style.background='#707070'
+  updateGameHistoryUI();
+  updateScoreTallyUI();
+});
