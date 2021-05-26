@@ -52,14 +52,23 @@ goButton.addEventListener(`click`, function () {
 
 rockButton.addEventListener(`click`, function () {
   userSelection = `rock`;
+  rockButton.style.background='#000000'
+  paperButton.style.background='#707070'
+  scissorsButton.style.background='#707070'
 });
 
 paperButton.addEventListener(`click`, function () {
   userSelection = `paper`;
+  rockButton.style.background='#707070'
+  paperButton.style.background='#000000'
+  scissorsButton.style.background='#707070'
 });
 
 scissorsButton.addEventListener(`click`, function () {
   userSelection = `scissors`;
+  rockButton.style.background='#707070'
+  paperButton.style.background='#707070'
+  scissorsButton.style.background='#000000'
 });
 
 // If you're doing the extra-credit, uncomment the below: reset-game-button
