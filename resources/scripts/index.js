@@ -14,7 +14,7 @@ const emptySelectionWarning = document.getElementById(`emptySelectionWarning`);
 const resetButton = document.getElementById(`reset-button`);
 
 // instantiate the game object from the `RockPaperScissors` class.
-let game = new RockPaperScissors(userName);
+let game;
 let userSelection;
 
 // hide game screen
@@ -34,6 +34,7 @@ function updateGameHistoryUI(){
 
 // start-game-button EventListener
 startGameButton.addEventListener(`click`, function () {
+  game = new RockPaperScissors(userName);
   welcomeScreen.classList.add(`d-none`);
   gameScreen.classList.remove(`d-none`); 
   game.username.value = userName.value;

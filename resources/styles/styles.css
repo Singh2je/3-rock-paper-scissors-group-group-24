@@ -1,15 +1,16 @@
 #welcome-screen {
   border: 3px solid black;
   border-radius: 5px;
+  padding: 1.5%;
 }
 
 #game-screen {
  border: 3px solid teal;
  border-radius: 5px; 
+ padding: 1%;
 }
 
-h1{
-  letter-spacing: 3px;
+h1 {
   color: maroon;
   text-align: center;
   padding: 1%;
@@ -20,3 +21,32 @@ h1{
   letter-spacing: 15px;
 }
 
+#usernameLabel {
+  margin-bottom: 2%;
+}
+
+#username {
+  margin-bottom: 2%;
+}
+
+#start-game-button {
+  margin-bottom: 0.5%;
+}
+
+#score {
+  margin-top: 1%;
+  letter-spacing: 3px;
+}
+
+#rock-button {
+  width: 20%;
+  margin-bottom: 1%;
+}
+#paper-button {
+  width: 20%;
+  margin-bottom: 1%;
+}
+#scissors-button {
+  width: 20%;
+  margin-bottom: 1%;
+}
