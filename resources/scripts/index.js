@@ -11,6 +11,7 @@ const rockButton = document.getElementById(`rock-button`);
 const paperButton = document.getElementById(`paper-button`);
 const scissorsButton = document.getElementById(`scissors-button`);
 const emptySelectionWarning = document.getElementById(`emptySelectionWarning`);
+const emptyUsernameWarning = document.getElementById(`emptyUsernameWarning`);
 const resetButton = document.getElementById(`reset-button`);
 
 // instantiate the game object from the `RockPaperScissors` class.
@@ -20,11 +21,12 @@ let userSelection;
 // hide game screen
 gameScreen.classList.add(`d-none`);
 emptySelectionWarning.classList.add(`d-none`);
+emptyUsernameWarning.classList.add(`d-none`);
 user_selection.classList.add(`d-none`);
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
-  scoreParagraph.innerHTML = game.username.value + `: ` + game.score.user + ` CPU: ` + game.score.cpu;
+  scoreParagraph.innerHTML = game.username.value + `: ` + `<span class='score-number'>${game.score.user}</span>` + ` CPU: ` + `<span class='score-number'>${game.score.cpu}</span>`;
 }
 
 // updateGameHistoryUI
@@ -34,11 +36,16 @@ function updateGameHistoryUI(){
 
 // start-game-button EventListener
 startGameButton.addEventListener(`click`, function () {
-  game = new RockPaperScissors(userName);
-  welcomeScreen.classList.add(`d-none`);
-  gameScreen.classList.remove(`d-none`); 
-  game.username.value = userName.value;
-  updateScoreTallyUI();
+  if(userName.value){
+    emptyUsernameWarning.classList.add(`d-none`);
+    game = new RockPaperScissors(userName);
+    welcomeScreen.classList.add(`d-none`);
+    gameScreen.classList.remove(`d-none`); 
+    game.username.value = userName.value;
+    updateScoreTallyUI();
+  } else {
+    emptyUsernameWarning.classList.remove(`d-none`);
+  }
   // Complete
 });
 

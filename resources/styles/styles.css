@@ -21,6 +21,14 @@ h1 {
   letter-spacing: 15px;
 }
 
+.score-number {
+  color: maroon;
+  text-align: center;
+  padding: 1%;
+  background-color: peachpuff;
+  border-radius: 10px;
+}
+
 #usernameLabel {
   margin-bottom: 2%;
 }
@@ -31,6 +39,14 @@ h1 {
 
 #start-game-button {
   margin-bottom: 0.5%;
+}
+
+#go-button {
+  margin-right: 0.5%;
+}
+
+#game-form {
+  margin-bottom: 1%;
 }
 
 #score {
