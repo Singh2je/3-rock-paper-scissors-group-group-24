@@ -1,11 +1,22 @@
-const updateScoreTallyUI = require(`../resources/scripts/index`).__get__(`updateScoreTallyUI`);
-// const userName = require(`../resources/scripts/index`).__get__(`userName`);
-const scoreParagraph = require(`../resources/scripts/index`).__get__(`scoreParagraph`);
+/**
+ * @jest-environment jsdom
+*/
+/* eslint-env browser */
 
-describe(`reset button test`, function () {
-  test(`reset game attributes`, function() {
-    // userName = `test`;
-    updateScoreTallyUI();
-    expect(scoreParagraph).toBe(`test : 0 CPU: 0`);
+const fs = require(`fs`);
+const path = require(`path`);
+const html = fs.readFileSync(path.resolve(__dirname, `../index.html`), `utf8`);
+const indexPage = require(`../resources/scripts/index`);
+jest.dontMock(`fs`);
+
+describe(`index.js test`, function () {
+  beforeEach(() => {
+    document.documentElement.innerHTML = html.toString();
   });
+
+  afterEach(() => {
+    // restore the original func after test
+    jest.resetModules();
+  });
+
 });
