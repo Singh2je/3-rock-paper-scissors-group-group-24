@@ -65,6 +65,8 @@ class RockPaperScissors {
   play(userSelection){
     var cpuSelection = this.generateCPUResponse();
     var userVictory = this.determineWinner(userSelection, cpuSelection);
+    userSelection = userSelection.toUpperCase();
+    cpuSelection = cpuSelection.toUpperCase();
     if(userVictory == 'win')
     {
       this.score.user ++;
